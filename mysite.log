@@ -1,0 +1,385 @@
+[07/Jul/2015 16:59:49] DEBUG [django.db.backends:91] (0.001) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[07/Jul/2015 16:59:49] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+[07/Jul/2015 17:01:07] INFO [journal.views:14] /articles got called..
+[07/Jul/2015 17:01:08] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "journal_article"."id", "journal_article"."title", "journal_article"."author_id", "journal_article"."pub_date", "journal_article"."category", "journal_article"."hero_image", "journal_article"."optional_image", "journal_article"."body" FROM "journal_article" WHERE "journal_article"."id" = %s LIMIT 21' - PARAMS = (1,); args=(1,)
+[07/Jul/2015 17:01:08] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s LIMIT 21' - PARAMS = (1,); args=(1,)
+[07/Jul/2015 17:01:54] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "journal_article"."id", "journal_article"."title", "journal_article"."author_id", "journal_article"."pub_date", "journal_article"."category", "journal_article"."hero_image", "journal_article"."optional_image", "journal_article"."body" FROM "journal_article" ORDER BY "journal_article"."pub_date" DESC' - PARAMS = (); args=()
+[07/Jul/2015 17:01:54] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s LIMIT 21' - PARAMS = (1,); args=(1,)
+[07/Jul/2015 17:02:14] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "journal_article"."id", "journal_article"."title", "journal_article"."author_id", "journal_article"."pub_date", "journal_article"."category", "journal_article"."hero_image", "journal_article"."optional_image", "journal_article"."body" FROM "journal_article" WHERE "journal_article"."id" = %s LIMIT 21' - PARAMS = (2,); args=(2,)
+[08/Jul/2015 03:44:42] DEBUG [django.db.backends:91] (0.001) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[08/Jul/2015 03:44:42] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+[08/Jul/2015 03:56:25] DEBUG [django.db.backends:91] (0.001) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[08/Jul/2015 03:56:25] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+[08/Jul/2015 03:56:31] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = %s AND "django_session"."expire_date" > %s) LIMIT 21' - PARAMS = (u'tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 03:56:31.109017'); args=('tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 03:56:31.109017')
+[08/Jul/2015 03:56:31] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s LIMIT 21' - PARAMS = (1,); args=(1,)
+[08/Jul/2015 03:56:31] INFO [journal.views:15] /articles got called..
+[08/Jul/2015 03:56:31] ERROR [django.request:231] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 98, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 338, in resolve
+    for pattern in self.url_patterns:
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 367, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 361, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/cgiridhar/gale/gale/urls.py", line 10, in <module>
+    url(r'^', include('journal.urls')),
+  File "/Library/Python/2.7/site-packages/django/conf/urls/__init__.py", line 28, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/cgiridhar/gale/journal/urls.py", line 14, in <module>
+    url(r'/index', views.index(),)
+TypeError: index() takes exactly 1 argument (0 given)
+[08/Jul/2015 03:56:35] ERROR [django.request:231] Internal Server Error: /index
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 87, in get_response
+    response = middleware_method(request)
+  File "/Library/Python/2.7/site-packages/django/middleware/common.py", line 72, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 614, in is_valid_path
+    resolve(path, urlconf)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 489, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 338, in resolve
+    for pattern in self.url_patterns:
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 367, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 361, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/cgiridhar/gale/gale/urls.py", line 10, in <module>
+    url(r'^', include('journal.urls')),
+  File "/Library/Python/2.7/site-packages/django/conf/urls/__init__.py", line 28, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/cgiridhar/gale/journal/urls.py", line 14, in <module>
+    url(r'/index', views.index(),)
+TypeError: index() takes exactly 1 argument (0 given)
+[08/Jul/2015 03:57:34] DEBUG [django.db.backends:91] (0.000) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[08/Jul/2015 03:57:34] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+[08/Jul/2015 03:57:36] INFO [journal.views:15] /articles got called..
+[08/Jul/2015 03:57:36] ERROR [django.request:231] Internal Server Error: /index
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 87, in get_response
+    response = middleware_method(request)
+  File "/Library/Python/2.7/site-packages/django/middleware/common.py", line 72, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 614, in is_valid_path
+    resolve(path, urlconf)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 489, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 338, in resolve
+    for pattern in self.url_patterns:
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 367, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 361, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/cgiridhar/gale/gale/urls.py", line 10, in <module>
+    url(r'^', include('journal.urls')),
+  File "/Library/Python/2.7/site-packages/django/conf/urls/__init__.py", line 28, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/cgiridhar/gale/journal/urls.py", line 14, in <module>
+    url(r'/index', views.index(),)
+TypeError: index() takes exactly 1 argument (0 given)
+[08/Jul/2015 03:58:03] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = %s AND "django_session"."expire_date" > %s) LIMIT 21' - PARAMS = (u'tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 03:58:03.263083'); args=('tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 03:58:03.263083')
+[08/Jul/2015 03:58:03] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s LIMIT 21' - PARAMS = (1,); args=(1,)
+[08/Jul/2015 03:58:03] ERROR [django.request:231] Internal Server Error: /index/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 98, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 338, in resolve
+    for pattern in self.url_patterns:
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 367, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 361, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/cgiridhar/gale/gale/urls.py", line 10, in <module>
+    url(r'^', include('journal.urls')),
+  File "/Library/Python/2.7/site-packages/django/conf/urls/__init__.py", line 28, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/cgiridhar/gale/journal/urls.py", line 14, in <module>
+    url(r'^index/', views.index(),)
+TypeError: index() takes exactly 1 argument (0 given)
+[08/Jul/2015 03:59:41] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = %s AND "django_session"."expire_date" > %s) LIMIT 21' - PARAMS = (u'tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 03:59:41.639379'); args=('tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 03:59:41.639379')
+[08/Jul/2015 03:59:41] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s LIMIT 21' - PARAMS = (1,); args=(1,)
+[08/Jul/2015 03:59:41] ERROR [django.request:231] Internal Server Error: /index/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 98, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 338, in resolve
+    for pattern in self.url_patterns:
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 367, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 361, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/cgiridhar/gale/gale/urls.py", line 10, in <module>
+    url(r'^', include('journal.urls')),
+  File "/Library/Python/2.7/site-packages/django/conf/urls/__init__.py", line 28, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/cgiridhar/gale/journal/urls.py", line 14, in <module>
+    url(r'^index/$', views.index(),)
+TypeError: index() takes exactly 1 argument (0 given)
+[08/Jul/2015 04:01:36] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = %s AND "django_session"."expire_date" > %s) LIMIT 21' - PARAMS = (u'tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 04:01:36.752555'); args=('tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 04:01:36.752555')
+[08/Jul/2015 04:01:36] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s LIMIT 21' - PARAMS = (1,); args=(1,)
+[08/Jul/2015 04:01:37] ERROR [django.request:231] Internal Server Error: /index/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 98, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 338, in resolve
+    for pattern in self.url_patterns:
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 367, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Library/Python/2.7/site-packages/django/core/urlresolvers.py", line 361, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/cgiridhar/gale/gale/urls.py", line 12, in <module>
+    url(r'^index/$', views.index(),)
+TypeError: index() takes exactly 1 argument (0 given)
+[08/Jul/2015 04:02:11] DEBUG [django.db.backends:91] (0.000) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[08/Jul/2015 04:02:11] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+[08/Jul/2015 04:02:13] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = %s AND "django_session"."expire_date" > %s) LIMIT 21' - PARAMS = (u'tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 04:02:13.376130'); args=('tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 04:02:13.376130')
+[08/Jul/2015 04:02:13] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s LIMIT 21' - PARAMS = (1,); args=(1,)
+[08/Jul/2015 04:02:13] INFO [journal.views:15] /articles got called..
+[08/Jul/2015 04:02:13] ERROR [django.request:231] Internal Server Error: /index/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/cgiridhar/gale/journal/views.py", line 42, in index
+    return render(request, 'index.html', content_type="application/xhtml+xml")
+  File "/Library/Python/2.7/site-packages/django/shortcuts.py", line 48, in render
+    return HttpResponse(loader.render_to_string(*args, **kwargs),
+  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name, dirs)
+  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 136, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: index.html
+[08/Jul/2015 04:07:13] DEBUG [django.db.backends:91] (0.001) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[08/Jul/2015 04:07:13] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+[08/Jul/2015 04:07:50] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = %s AND "django_session"."expire_date" > %s) LIMIT 21' - PARAMS = (u'tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 04:07:50.298421'); args=('tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 04:07:50.298421')
+[08/Jul/2015 04:07:50] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s LIMIT 21' - PARAMS = (1,); args=(1,)
+[08/Jul/2015 04:07:50] INFO [journal.views:15] /articles got called..
+[08/Jul/2015 04:08:05] DEBUG [django.db.backends:91] (0.001) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[08/Jul/2015 04:08:05] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+[08/Jul/2015 04:08:07] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = %s AND "django_session"."expire_date" > %s) LIMIT 21' - PARAMS = (u'tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 04:08:07.128355'); args=('tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 04:08:07.128355')
+[08/Jul/2015 04:08:07] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s LIMIT 21' - PARAMS = (1,); args=(1,)
+[08/Jul/2015 04:08:07] INFO [journal.views:15] /articles got called..
+[08/Jul/2015 04:08:20] DEBUG [django.db.backends:91] (0.001) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[08/Jul/2015 04:08:20] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+[08/Jul/2015 04:08:21] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = %s AND "django_session"."expire_date" > %s) LIMIT 21' - PARAMS = (u'tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 04:08:21.575358'); args=('tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 04:08:21.575358')
+[08/Jul/2015 04:08:21] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s LIMIT 21' - PARAMS = (1,); args=(1,)
+[08/Jul/2015 04:08:21] INFO [journal.views:15] /articles got called..
+[08/Jul/2015 04:08:28] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = %s AND "django_session"."expire_date" > %s) LIMIT 21' - PARAMS = (u'tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 04:08:28.922608'); args=('tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 04:08:28.922608')
+[08/Jul/2015 04:08:28] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s LIMIT 21' - PARAMS = (1,); args=(1,)
+[08/Jul/2015 04:16:29] DEBUG [django.db.backends:91] (0.002) QUERY = u'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = %s AND "django_session"."expire_date" > %s) LIMIT 21' - PARAMS = (u'tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 04:16:29.004691'); args=('tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 04:16:29.004691')
+[08/Jul/2015 04:16:29] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s LIMIT 21' - PARAMS = (1,); args=(1,)
+[08/Jul/2015 04:32:55] DEBUG [django.db.backends:91] (0.004) QUERY = u'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = %s AND "django_session"."expire_date" > %s) LIMIT 21' - PARAMS = (u'tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 04:32:55.095058'); args=('tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 04:32:55.095058')
+[08/Jul/2015 04:32:55] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s LIMIT 21' - PARAMS = (1,); args=(1,)
+[08/Jul/2015 06:24:50] DEBUG [django.db.backends:91] (0.007) QUERY = u'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = %s AND "django_session"."expire_date" > %s) LIMIT 21' - PARAMS = (u'tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 06:24:50.209013'); args=('tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 06:24:50.209013')
+[08/Jul/2015 06:24:50] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s LIMIT 21' - PARAMS = (1,); args=(1,)
+[08/Jul/2015 06:24:50] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = %s AND "django_session"."expire_date" > %s) LIMIT 21' - PARAMS = (u'tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 06:24:50.368505'); args=('tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 06:24:50.368505')
+[08/Jul/2015 06:24:50] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s LIMIT 21' - PARAMS = (1,); args=(1,)
+[08/Jul/2015 06:24:50] WARNING [django.request:143] Not Found: /index/football-main.jpg
+[08/Jul/2015 06:24:51] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = %s AND "django_session"."expire_date" > %s) LIMIT 21' - PARAMS = (u'tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 06:24:51.667279'); args=('tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 06:24:51.667279')
+[08/Jul/2015 06:24:51] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s LIMIT 21' - PARAMS = (1,); args=(1,)
+[08/Jul/2015 06:24:51] WARNING [django.request:143] Not Found: /index/football-main.jpg
+[08/Jul/2015 06:57:05] DEBUG [django.db.backends:91] (0.001) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[08/Jul/2015 06:57:05] DEBUG [django.db.backends:91] (0.002) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+[08/Jul/2015 06:57:29] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = %s AND "django_session"."expire_date" > %s) LIMIT 21' - PARAMS = (u'tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 06:57:29.381520'); args=('tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 06:57:29.381520')
+[08/Jul/2015 06:57:29] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s LIMIT 21' - PARAMS = (1,); args=(1,)
+[08/Jul/2015 06:57:30] INFO [journal.views:15] /articles got called..
+[08/Jul/2015 06:57:43] DEBUG [django.db.backends:91] (0.002) QUERY = u'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = %s AND "django_session"."expire_date" > %s) LIMIT 21' - PARAMS = (u'tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 06:57:43.296741'); args=('tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 06:57:43.296741')
+[08/Jul/2015 06:57:43] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s LIMIT 21' - PARAMS = (1,); args=(1,)
+[08/Jul/2015 07:01:38] DEBUG [django.db.backends:91] (0.001) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[08/Jul/2015 07:01:38] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+[08/Jul/2015 07:01:39] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = %s AND "django_session"."expire_date" > %s) LIMIT 21' - PARAMS = (u'tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 07:01:39.146934'); args=('tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 07:01:39.146934')
+[08/Jul/2015 07:01:39] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s LIMIT 21' - PARAMS = (1,); args=(1,)
+[08/Jul/2015 07:01:39] INFO [journal.views:15] /articles got called..
+[08/Jul/2015 07:02:30] DEBUG [django.db.backends:91] (0.001) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[08/Jul/2015 07:02:30] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+[08/Jul/2015 07:02:31] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = %s AND "django_session"."expire_date" > %s) LIMIT 21' - PARAMS = (u'tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 07:02:31.310023'); args=('tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 07:02:31.310023')
+[08/Jul/2015 07:02:31] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s LIMIT 21' - PARAMS = (1,); args=(1,)
+[08/Jul/2015 07:02:31] INFO [journal.views:15] /articles got called..
+[08/Jul/2015 07:02:41] WARNING [django.request:143] Not Found: /articles/2/
+[08/Jul/2015 07:02:47] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "journal_article"."id", "journal_article"."title", "journal_article"."author_id", "journal_article"."pub_date", "journal_article"."category", "journal_article"."hero_image", "journal_article"."optional_image", "journal_article"."body" FROM "journal_article" WHERE "journal_article"."id" = %s LIMIT 21' - PARAMS = (2,); args=(2,)
+[08/Jul/2015 07:03:02] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "journal_article"."id", "journal_article"."title", "journal_article"."author_id", "journal_article"."pub_date", "journal_article"."category", "journal_article"."hero_image", "journal_article"."optional_image", "journal_article"."body" FROM "journal_article" ORDER BY "journal_article"."pub_date" DESC' - PARAMS = (); args=()
+[08/Jul/2015 07:03:02] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s LIMIT 21' - PARAMS = (1,); args=(1,)
+[08/Jul/2015 07:03:05] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "journal_article"."id", "journal_article"."title", "journal_article"."author_id", "journal_article"."pub_date", "journal_article"."category", "journal_article"."hero_image", "journal_article"."optional_image", "journal_article"."body" FROM "journal_article" WHERE "journal_article"."id" = %s LIMIT 21' - PARAMS = (1,); args=(1,)
+[08/Jul/2015 07:03:05] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s LIMIT 21' - PARAMS = (1,); args=(1,)
+[08/Jul/2015 07:06:51] DEBUG [django.db.backends:91] (0.001) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[08/Jul/2015 07:06:51] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+[08/Jul/2015 07:06:56] INFO [journal.views:15] /articles got called..
+[08/Jul/2015 07:06:56] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "journal_article"."id", "journal_article"."title", "journal_article"."author_id", "journal_article"."pub_date", "journal_article"."category", "journal_article"."hero_image", "journal_article"."optional_image", "journal_article"."body" FROM "journal_article" WHERE "journal_article"."id" = %s LIMIT 21' - PARAMS = (1,); args=(1,)
+[08/Jul/2015 07:06:56] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s LIMIT 21' - PARAMS = (1,); args=(1,)
+[08/Jul/2015 07:07:01] WARNING [django.request:143] Not Found: /articles/2/
+[08/Jul/2015 07:07:03] WARNING [django.request:143] Not Found: /articles/
+[08/Jul/2015 07:07:12] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = %s AND "django_session"."expire_date" > %s) LIMIT 21' - PARAMS = (u'tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 07:07:12.914768'); args=('tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 07:07:12.914768')
+[08/Jul/2015 07:07:12] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s LIMIT 21' - PARAMS = (1,); args=(1,)
+[08/Jul/2015 07:07:12] WARNING [django.request:143] Not Found: /index/
+[08/Jul/2015 07:07:13] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = %s AND "django_session"."expire_date" > %s) LIMIT 21' - PARAMS = (u'tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 07:07:13.510614'); args=('tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 07:07:13.510614')
+[08/Jul/2015 07:07:13] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s LIMIT 21' - PARAMS = (1,); args=(1,)
+[08/Jul/2015 07:07:13] WARNING [django.request:143] Not Found: /index/
+[08/Jul/2015 07:07:27] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = %s AND "django_session"."expire_date" > %s) LIMIT 21' - PARAMS = (u'tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 07:07:27.660070'); args=('tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 07:07:27.660070')
+[08/Jul/2015 07:07:27] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s LIMIT 21' - PARAMS = (1,); args=(1,)
+[08/Jul/2015 07:07:27] WARNING [django.request:143] Not Found: /articles/
+[08/Jul/2015 07:07:28] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = %s AND "django_session"."expire_date" > %s) LIMIT 21' - PARAMS = (u'tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 07:07:28.030696'); args=('tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 07:07:28.030696')
+[08/Jul/2015 07:07:28] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s LIMIT 21' - PARAMS = (1,); args=(1,)
+[08/Jul/2015 07:07:28] WARNING [django.request:143] Not Found: /articles/
+[08/Jul/2015 07:07:52] DEBUG [django.db.backends:91] (0.001) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[08/Jul/2015 07:07:52] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+[08/Jul/2015 07:07:53] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = %s AND "django_session"."expire_date" > %s) LIMIT 21' - PARAMS = (u'tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 07:07:53.161752'); args=('tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 07:07:53.161752')
+[08/Jul/2015 07:07:53] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s LIMIT 21' - PARAMS = (1,); args=(1,)
+[08/Jul/2015 07:07:53] INFO [journal.views:15] /articles got called..
+[08/Jul/2015 07:08:59] DEBUG [django.db.backends:91] (0.001) QUERY = "\n            SELECT name FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[08/Jul/2015 07:08:59] DEBUG [django.db.backends:91] (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+[08/Jul/2015 09:24:01] INFO [journal.views:15] /articles got called..
+[08/Jul/2015 09:24:02] WARNING [django.request:143] Not Found: /favicon.ico
+[08/Jul/2015 09:50:30] DEBUG [django.db.backends:91] (0.005) QUERY = u'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = %s AND "django_session"."expire_date" > %s) LIMIT 21' - PARAMS = (u'tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 09:50:30.517700'); args=('tkgrwfnp0hdqr75zogdc3upky5pnk7c6', u'2015-07-08 09:50:30.517700')
+[08/Jul/2015 09:50:30] DEBUG [django.db.backends:91] (0.001) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s LIMIT 21' - PARAMS = (1,); args=(1,)
+[08/Jul/2015 10:21:22] INFO [journal.views:15] /articles got called..
+[08/Jul/2015 10:21:22] ERROR [django.request:256] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/cgiridhar/gale/venv/lib/python2.7/site-packages/django/core/handlers/base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/cgiridhar/gale/venv/lib/python2.7/site-packages/django/core/urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "/Users/cgiridhar/gale/venv/lib/python2.7/site-packages/django/core/urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Users/cgiridhar/gale/venv/lib/python2.7/site-packages/django/core/urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/cgiridhar/gale/gale/urls.py", line 14, in <module>
+    url(r'^docs/', include('rest_framework_swagger.urls')),
+  File "/Users/cgiridhar/gale/venv/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+ImportError: No module named rest_framework_swagger.urls
+[08/Jul/2015 10:24:51] INFO [journal.views:15] /articles got called..
+[08/Jul/2015 10:24:51] WARNING [django.request:170] Not Found: /index
+[08/Jul/2015 10:24:51] WARNING [django.request:170] Not Found: /index
+[08/Jul/2015 10:24:51] WARNING [django.request:170] Not Found: /favicon.ico
+[08/Jul/2015 10:24:51] WARNING [django.request:170] Not Found: /favicon.ico
+[08/Jul/2015 10:25:03] ERROR [django.request:256] Internal Server Error: /static/journal/football-main.jpg
+Traceback (most recent call last):
+  File "/Users/cgiridhar/gale/venv/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/cgiridhar/gale/venv/lib/python2.7/site-packages/django/views/static.py", line 54, in serve
+    fullpath = os.path.join(document_root, newpath)
+  File "/Users/cgiridhar/gale/venv/lib/python2.7/posixpath.py", line 77, in join
+    elif path == '' or path.endswith('/'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+[08/Jul/2015 10:25:11] ERROR [django.request:256] Internal Server Error: /static/journal/football-main.jpg
+Traceback (most recent call last):
+  File "/Users/cgiridhar/gale/venv/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/cgiridhar/gale/venv/lib/python2.7/site-packages/django/views/static.py", line 54, in serve
+    fullpath = os.path.join(document_root, newpath)
+  File "/Users/cgiridhar/gale/venv/lib/python2.7/posixpath.py", line 77, in join
+    elif path == '' or path.endswith('/'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+[08/Jul/2015 10:25:38] DEBUG [django.db.backends:89] (0.001) QUERY = u'SELECT "journal_article"."id", "journal_article"."title", "journal_article"."author_id", "journal_article"."pub_date", "journal_article"."category", "journal_article"."hero_image", "journal_article"."optional_image", "journal_article"."body" FROM "journal_article" ORDER BY "journal_article"."pub_date" DESC' - PARAMS = (); args=()
+[08/Jul/2015 10:25:38] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s' - PARAMS = (1,); args=(1,)
+[08/Jul/2015 10:25:42] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "journal_article"."id", "journal_article"."title", "journal_article"."author_id", "journal_article"."pub_date", "journal_article"."category", "journal_article"."hero_image", "journal_article"."optional_image", "journal_article"."body" FROM "journal_article" WHERE "journal_article"."id" = %s' - PARAMS = (1,); args=(1,)
+[08/Jul/2015 10:25:42] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s' - PARAMS = (1,); args=(1,)
+[08/Jul/2015 10:25:49] ERROR [django.request:256] Internal Server Error: /static/journal/football-main.jpg
+Traceback (most recent call last):
+  File "/Users/cgiridhar/gale/venv/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/cgiridhar/gale/venv/lib/python2.7/site-packages/django/views/static.py", line 54, in serve
+    fullpath = os.path.join(document_root, newpath)
+  File "/Users/cgiridhar/gale/venv/lib/python2.7/posixpath.py", line 77, in join
+    elif path == '' or path.endswith('/'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+[08/Jul/2015 10:26:10] ERROR [django.request:256] Internal Server Error: /static/journal/football-main.jpg
+Traceback (most recent call last):
+  File "/Users/cgiridhar/gale/venv/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/cgiridhar/gale/venv/lib/python2.7/site-packages/django/views/static.py", line 54, in serve
+    fullpath = os.path.join(document_root, newpath)
+  File "/Users/cgiridhar/gale/venv/lib/python2.7/posixpath.py", line 77, in join
+    elif path == '' or path.endswith('/'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+[08/Jul/2015 10:28:24] INFO [journal.views:15] /articles got called..
+[08/Jul/2015 10:28:25] ERROR [django.request:256] Internal Server Error: /static/journal/football-main.jpg
+Traceback (most recent call last):
+  File "/Users/cgiridhar/gale/venv/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/cgiridhar/gale/venv/lib/python2.7/site-packages/django/views/static.py", line 54, in serve
+    fullpath = os.path.join(document_root, newpath)
+  File "/Users/cgiridhar/gale/venv/lib/python2.7/posixpath.py", line 77, in join
+    elif path == '' or path.endswith('/'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+[08/Jul/2015 10:28:25] WARNING [django.request:170] Not Found: /favicon.ico
+[08/Jul/2015 10:52:23] INFO [journal.views:15] /articles got called..
+[08/Jul/2015 10:52:23] ERROR [django.request:256] Internal Server Error: /static/journal/football-main.jpg
+Traceback (most recent call last):
+  File "/Users/cgiridhar/gale/venv/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/cgiridhar/gale/venv/lib/python2.7/site-packages/django/views/static.py", line 54, in serve
+    fullpath = os.path.join(document_root, newpath)
+  File "/Users/cgiridhar/gale/venv/lib/python2.7/posixpath.py", line 77, in join
+    elif path == '' or path.endswith('/'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+[08/Jul/2015 10:52:34] ERROR [django.request:256] Internal Server Error: /static/
+Traceback (most recent call last):
+  File "/Users/cgiridhar/gale/venv/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/cgiridhar/gale/venv/lib/python2.7/site-packages/django/views/static.py", line 54, in serve
+    fullpath = os.path.join(document_root, newpath)
+  File "/Users/cgiridhar/gale/venv/lib/python2.7/posixpath.py", line 77, in join
+    elif path == '' or path.endswith('/'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+[08/Jul/2015 10:52:43] ERROR [django.request:256] Internal Server Error: /static/journal
+Traceback (most recent call last):
+  File "/Users/cgiridhar/gale/venv/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/cgiridhar/gale/venv/lib/python2.7/site-packages/django/views/static.py", line 54, in serve
+    fullpath = os.path.join(document_root, newpath)
+  File "/Users/cgiridhar/gale/venv/lib/python2.7/posixpath.py", line 77, in join
+    elif path == '' or path.endswith('/'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+[08/Jul/2015 10:53:47] ERROR [django.request:256] Internal Server Error: /static/journal/football-main.jpg
+Traceback (most recent call last):
+  File "/Users/cgiridhar/gale/venv/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/cgiridhar/gale/venv/lib/python2.7/site-packages/django/views/static.py", line 54, in serve
+    fullpath = os.path.join(document_root, newpath)
+  File "/Users/cgiridhar/gale/venv/lib/python2.7/posixpath.py", line 77, in join
+    elif path == '' or path.endswith('/'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+[08/Jul/2015 10:55:03] INFO [journal.views:15] /articles got called..
+[08/Jul/2015 10:55:26] INFO [journal.views:15] /articles got called..
+[08/Jul/2015 10:55:27] ERROR [django.request:256] Internal Server Error: /static/journal/football-main.jpg
+Traceback (most recent call last):
+  File "/Users/cgiridhar/gale/venv/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/cgiridhar/gale/venv/lib/python2.7/site-packages/django/views/static.py", line 54, in serve
+    fullpath = os.path.join(document_root, newpath)
+  File "/Users/cgiridhar/gale/venv/lib/python2.7/posixpath.py", line 77, in join
+    elif path == '' or path.endswith('/'):
+AttributeError: 'NoneType' object has no attribute 'endswith'
+[08/Jul/2015 10:55:27] WARNING [django.request:170] Not Found: /favicon.ico
+[08/Jul/2015 10:55:27] WARNING [django.request:170] Not Found: /favicon.ico
+[08/Jul/2015 10:59:09] INFO [journal.views:15] /articles got called..
