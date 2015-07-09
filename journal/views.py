@@ -38,6 +38,8 @@ class UserDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
-def index(request):
-    return render(request, 'journal/index.html')
+def ArticleListPage(request):
+    return render(request, 'journal/list.html')
 
+def ArticleDetailPage(request, pk):
+    return render(request, 'journal/detail.html', {'article_id':pk} )

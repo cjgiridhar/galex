@@ -8,7 +8,8 @@ class ArticleSerializer(serializers.ModelSerializer):
     author = serializers.ReadOnlyField(source='author.username')
     class Meta:
         model = Article
-        fields = ('id', 'title', 'pub_date', 'category', 'body', 'author')
+        fields = ('id', 'title', 'pub_date', 'category', 'body',
+                  'author', 'hero_image')
 
 
 class UserSerializer(serializers.ModelSerializer):

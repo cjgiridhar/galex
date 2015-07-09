@@ -1,0 +1,101 @@
+{% load staticfiles %}
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>MyJourno!</title>
+		<link href="{% static 'journal/css/style.css' %}" rel="stylesheet" type="text/css" media="screen" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="{% static 'journal/js/scripts.js' %}"></script>
+		{% block content %}
+			<script>
+				articleList( {{article_id}} );
+			</script>
+		{% endblock %}
+	</head>
+
+	<body>
+
+		<header>
+
+		</header>
+		<div id="mybox">
+			<!-- <img src="/home/ubuntu/fsMgr/images/box.jpeg" height="70" width="70" /> -->
+			SportJourno = The best sports journal around. Stay tuned for latest articles!!<br />
+		</div>
+
+		<div id="search">
+			<FORM ACTION="/search" METHOD="GET">
+	        	<input type="text" name="q" onFocus="if (value == 'Search here..') {value=''}" onBlur="if (value== '') {value='Search here..'}" size="15">
+				<input type="submit" value="Search"/>
+			</FORM>
+	    </div>    
+
+<!-- 		<div id="nav-images">
+			<center>
+				<table> 
+					<col width="250" /> <col width="100" /> <col width="200" /> <col width="200" />
+					<tr bgcolor="LightBlue">
+						<td height="30"> Name</td>
+						<td height="30">Type</td>
+						<td height="30">Size</td>
+						<td height="30">Last Modified</td>
+					</tr>
+
+				</table>
+				<a href="http://localhost:8888/root/"><h3>Home</h3></a>
+			</center>
+		</div> -->
+
+		<div id="article">
+		    <div class="content">
+		        <div class="column_content">
+		            <div class="textblock">
+	                
+					<!-- <h2>Sachin Tendulkar bids farewell with tears and cheers!</h2> -->
+					<h2 id="title"></h2>
+					<p id="pub_date" style="font-size:12px"></p>		
+					<br> <br/>
+					<center><img id="image" src="{% static 'journal/images/sachin.jpeg' %}" /></center>
+
+					<p id="body"></p>
+					<hr>
+
+					<p>Catch up with the <a href="/news">latest conference news</a>!</p>
+
+	            	</div>
+	        	</div>
+	    	</div>
+		</div>
+
+	    <div id="sidebar">
+			<table align="left">
+			<!-- <col width="50" /> <col width="100" />  -->
+<!-- 			<tr>
+				<td>Choose Category!</td>
+			</tr> -->
+			<tr>
+				<td> <img src={% static 'journal/images/home.png' %} height="50%" width="50%" /> </td>
+				<!-- <td> <a href="http://localhost:8888/advsearch">Advanced Search</a> </td> -->
+			</tr>
+			<tr>
+				<td> <a href="http://www.google.com"><img src={% static 'journal/images/cricket.png' %} height="50%" width="50%" /></a> </td>
+				<!-- <td> <a href="http://localhost:8888/start">Get Started</a> </td> -->
+			</tr>
+			<tr>
+				<td> <img src={% static 'journal/images/football.png' %} height="50%" width="53%" /> </td>
+				<!-- <td> <a href="http://localhost:8888/meta">Metadata</a> </td> -->
+			</tr>
+			<tr>
+				<td> <img src={% static 'journal/images/hockey.png' %} height="50%" width="50%" /> </td>
+				<!-- <td> <a href="http://localhost:8888/invite">Invite</a> </td> -->
+			</tr>
+			<tr>	
+				<td> <img src={% static 'journal/images/tennis.png' %} height="50%" width="50%" /> </td>
+				<!-- <td> <a href="http://localhost:8888/developer">Developer</a> </td> -->
+			</tr>
+			
+			</table>
+		</div>
+
+	</body>
+</html>

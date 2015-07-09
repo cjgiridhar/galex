@@ -1,6 +1,6 @@
 from django.conf.urls import include, url
 from django.contrib import admin
-from journal.views import index
+from journal.views import ArticleListPage, ArticleDetailPage
 from django.conf.urls.static import static
 
 urlpatterns = [
