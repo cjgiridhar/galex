@@ -3,6 +3,7 @@ __author__ = 'cgiridhar'
 from django.conf.urls import url
 from journal import views
 from rest_framework.urlpatterns import format_suffix_patterns
+from django.conf import settings
 
 urlpatterns = [
     url(r'^api/articles/$', views.ArticleList.as_view()),
@@ -13,6 +14,6 @@ urlpatterns = [
 
     url(r'^articles/$', views.ArticleListPage),
     url(r'^articles/(?P<pk>[0-9]+)/$', views.ArticleDetailPage),
-]
+] + settings.STATIC_URL
 
 urlpatterns = format_suffix_patterns(urlpatterns)
