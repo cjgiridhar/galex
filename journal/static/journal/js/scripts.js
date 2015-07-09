@@ -1,7 +1,8 @@
 function articleList(id) {
 	$.ajax({
 		type : 'GET',
-		url : "http://127.0.0.1:8000/api/articles/" + id + "/",
+		url: "https://protected-journey-8694.herokuapp.com/articles/" + id + "/",
+		//url : "http://127.0.0.1:8000/api/articles/" + id + "/",
 		success : function (resp) {
 			console.log("resp is", resp);
 			$('#title').text(resp.title);
