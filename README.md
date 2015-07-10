@@ -54,6 +54,7 @@ Non Functional Requirements:
 
 Testing:
 ----------
+- 3 tests added for adding, reading articles and comparing data
 - https://github.com/cjgiridhar/galex/blob/master/journal/tests.py
 
 
