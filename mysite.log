@@ -5020,3 +5020,153 @@ AttributeError: 'module' object has no attribute 'docs'
 [10/Jul/2015 15:57:59] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s' - PARAMS = (1,); args=(1,)
 [10/Jul/2015 15:57:59] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "journal_article"."id", "journal_article"."title", "journal_article"."author_id", "journal_article"."pub_date", "journal_article"."category", "journal_article"."hero_image", "journal_article"."optional_image", "journal_article"."body" FROM "journal_article" WHERE "journal_article"."id" = %s' - PARAMS = (4,); args=(4,)
 [10/Jul/2015 15:57:59] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s' - PARAMS = (2,); args=(2,)
+[10/Jul/2015 16:46:06] INFO [journal.views:26] /articles list API got called..
+[10/Jul/2015 16:46:06] INFO [journal.views:33] /articles detail API got called..
+[10/Jul/2015 16:46:06] INFO [journal.views:49] /articles list page got called..
+[10/Jul/2015 16:46:06] ERROR [django.request:256] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/cgiridhar/gale/journal/views.py", line 52, in ArticleListPage
+    for article in articles:
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 162, in __iter__
+    self._fetch_all()
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 965, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 238, in iterator
+    results = compiler.execute_sql()
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 829, in execute_sql
+    sql, params = self.as_sql()
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 378, in as_sql
+    extra_select, order_by, group_by = self.pre_sql_setup()
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 48, in pre_sql_setup
+    self.setup_query()
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 39, in setup_query
+    self.select, self.klass_info, self.annotation_col_map = self.get_select()
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 219, in get_select
+    ret.append((col, self.compile(col, select_format=True), alias))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 357, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "/Library/Python/2.7/site-packages/django/db/models/expressions.py", line 611, in as_sql
+    return "%s.%s" % (qn(self.alias), qn(self.target.column)), []
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 348, in quote_name_unless_alias
+    r = self.connection.ops.quote_name(name)
+  File "/Library/Python/2.7/site-packages/django/db/backends/dummy/base.py", line 21, in complain
+    raise ImproperlyConfigured("settings.DATABASES is improperly configured. "
+ImproperlyConfigured: settings.DATABASES is improperly configured. Please supply the ENGINE value. Check settings documentation for more details.
+[10/Jul/2015 16:46:10] INFO [journal.views:49] /articles list page got called..
+[10/Jul/2015 16:46:10] ERROR [django.request:256] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/cgiridhar/gale/journal/views.py", line 52, in ArticleListPage
+    for article in articles:
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 162, in __iter__
+    self._fetch_all()
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 965, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 238, in iterator
+    results = compiler.execute_sql()
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 829, in execute_sql
+    sql, params = self.as_sql()
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 378, in as_sql
+    extra_select, order_by, group_by = self.pre_sql_setup()
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 48, in pre_sql_setup
+    self.setup_query()
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 39, in setup_query
+    self.select, self.klass_info, self.annotation_col_map = self.get_select()
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 219, in get_select
+    ret.append((col, self.compile(col, select_format=True), alias))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 357, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "/Library/Python/2.7/site-packages/django/db/models/expressions.py", line 611, in as_sql
+    return "%s.%s" % (qn(self.alias), qn(self.target.column)), []
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 348, in quote_name_unless_alias
+    r = self.connection.ops.quote_name(name)
+  File "/Library/Python/2.7/site-packages/django/db/backends/dummy/base.py", line 21, in complain
+    raise ImproperlyConfigured("settings.DATABASES is improperly configured. "
+ImproperlyConfigured: settings.DATABASES is improperly configured. Please supply the ENGINE value. Check settings documentation for more details.
+[10/Jul/2015 16:46:36] INFO [journal.views:26] /articles list API got called..
+[10/Jul/2015 16:46:36] INFO [journal.views:33] /articles detail API got called..
+[10/Jul/2015 16:46:36] INFO [journal.views:49] /articles list page got called..
+[10/Jul/2015 16:46:36] ERROR [django.request:256] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/cgiridhar/gale/journal/views.py", line 52, in ArticleListPage
+    for article in articles:
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 162, in __iter__
+    self._fetch_all()
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 965, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 238, in iterator
+    results = compiler.execute_sql()
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 829, in execute_sql
+    sql, params = self.as_sql()
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 378, in as_sql
+    extra_select, order_by, group_by = self.pre_sql_setup()
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 48, in pre_sql_setup
+    self.setup_query()
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 39, in setup_query
+    self.select, self.klass_info, self.annotation_col_map = self.get_select()
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 219, in get_select
+    ret.append((col, self.compile(col, select_format=True), alias))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 357, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "/Library/Python/2.7/site-packages/django/db/models/expressions.py", line 611, in as_sql
+    return "%s.%s" % (qn(self.alias), qn(self.target.column)), []
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 348, in quote_name_unless_alias
+    r = self.connection.ops.quote_name(name)
+  File "/Library/Python/2.7/site-packages/django/db/backends/dummy/base.py", line 21, in complain
+    raise ImproperlyConfigured("settings.DATABASES is improperly configured. "
+ImproperlyConfigured: settings.DATABASES is improperly configured. Please supply the ENGINE value. Check settings documentation for more details.
+[10/Jul/2015 16:46:46] DEBUG [django.db.backends:89] (0.000) QUERY = "\n            SELECT name, type FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[10/Jul/2015 16:46:46] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+[10/Jul/2015 16:46:48] INFO [journal.views:26] /articles list API got called..
+[10/Jul/2015 16:46:48] INFO [journal.views:33] /articles detail API got called..
+[10/Jul/2015 16:46:48] INFO [journal.views:49] /articles list page got called..
+[10/Jul/2015 16:46:48] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "journal_article"."id", "journal_article"."title", "journal_article"."author_id", "journal_article"."pub_date", "journal_article"."category", "journal_article"."hero_image", "journal_article"."optional_image", "journal_article"."body" FROM "journal_article" ORDER BY "journal_article"."pub_date" DESC' - PARAMS = (); args=()
+[10/Jul/2015 16:46:48] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s' - PARAMS = (2,); args=(2,)
+[10/Jul/2015 16:46:48] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s' - PARAMS = (1,); args=(1,)
+[10/Jul/2015 16:46:48] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s' - PARAMS = (1,); args=(1,)
+[10/Jul/2015 16:46:48] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s' - PARAMS = (1,); args=(1,)
+[10/Jul/2015 16:47:16] DEBUG [django.db.backends:89] (0.000) QUERY = "\n            SELECT name, type FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+[10/Jul/2015 16:47:16] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+[10/Jul/2015 16:47:18] INFO [journal.views:26] /articles list API got called..
+[10/Jul/2015 16:47:18] INFO [journal.views:33] /articles detail API got called..
+[10/Jul/2015 16:47:18] INFO [journal.views:49] /articles list page got called..
+[10/Jul/2015 16:47:18] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "journal_article"."id", "journal_article"."title", "journal_article"."author_id", "journal_article"."pub_date", "journal_article"."category", "journal_article"."hero_image", "journal_article"."optional_image", "journal_article"."body" FROM "journal_article" ORDER BY "journal_article"."pub_date" DESC' - PARAMS = (); args=()
+[10/Jul/2015 16:47:18] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s' - PARAMS = (2,); args=(2,)
+[10/Jul/2015 16:47:18] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s' - PARAMS = (1,); args=(1,)
+[10/Jul/2015 16:47:18] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s' - PARAMS = (1,); args=(1,)
+[10/Jul/2015 16:47:18] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s' - PARAMS = (1,); args=(1,)
+[10/Jul/2015 16:47:22] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = %s AND "django_session"."expire_date" > %s)' - PARAMS = (u'br92yqvay2lkf0hhkomotpfskd124jvc', u'2015-07-10 16:47:22.051528'); args=('br92yqvay2lkf0hhkomotpfskd124jvc', u'2015-07-10 16:47:22.051528')
+[10/Jul/2015 16:47:22] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s' - PARAMS = (1,); args=(1,)
+[10/Jul/2015 16:47:22] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "journal_article"."id", "journal_article"."title", "journal_article"."author_id", "journal_article"."pub_date", "journal_article"."category", "journal_article"."hero_image", "journal_article"."optional_image", "journal_article"."body" FROM "journal_article" WHERE "journal_article"."id" = %s' - PARAMS = (1,); args=(1,)
+[10/Jul/2015 16:47:22] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s' - PARAMS = (1,); args=(1,)
+[10/Jul/2015 16:47:24] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = %s AND "django_session"."expire_date" > %s)' - PARAMS = (u'br92yqvay2lkf0hhkomotpfskd124jvc', u'2015-07-10 16:47:24.019351'); args=('br92yqvay2lkf0hhkomotpfskd124jvc', u'2015-07-10 16:47:24.019351')
+[10/Jul/2015 16:47:24] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s' - PARAMS = (1,); args=(1,)
+[10/Jul/2015 16:47:24] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "journal_article"."id", "journal_article"."title", "journal_article"."author_id", "journal_article"."pub_date", "journal_article"."category", "journal_article"."hero_image", "journal_article"."optional_image", "journal_article"."body" FROM "journal_article" WHERE "journal_article"."id" = %s' - PARAMS = (3,); args=(3,)
+[10/Jul/2015 16:47:24] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s' - PARAMS = (1,); args=(1,)
+[10/Jul/2015 16:47:24] DEBUG [django.db.backends:89] (0.001) QUERY = u'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = %s AND "django_session"."expire_date" > %s)' - PARAMS = (u'br92yqvay2lkf0hhkomotpfskd124jvc', u'2015-07-10 16:47:24.827386'); args=('br92yqvay2lkf0hhkomotpfskd124jvc', u'2015-07-10 16:47:24.827386')
+[10/Jul/2015 16:47:24] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s' - PARAMS = (1,); args=(1,)
+[10/Jul/2015 16:47:24] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "journal_article"."id", "journal_article"."title", "journal_article"."author_id", "journal_article"."pub_date", "journal_article"."category", "journal_article"."hero_image", "journal_article"."optional_image", "journal_article"."body" FROM "journal_article" WHERE "journal_article"."id" = %s' - PARAMS = (4,); args=(4,)
+[10/Jul/2015 16:47:24] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s' - PARAMS = (2,); args=(2,)
+[10/Jul/2015 16:47:25] DEBUG [django.db.backends:89] (0.001) QUERY = u'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = %s AND "django_session"."expire_date" > %s)' - PARAMS = (u'br92yqvay2lkf0hhkomotpfskd124jvc', u'2015-07-10 16:47:25.496816'); args=('br92yqvay2lkf0hhkomotpfskd124jvc', u'2015-07-10 16:47:25.496816')
+[10/Jul/2015 16:47:25] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s' - PARAMS = (1,); args=(1,)
+[10/Jul/2015 16:47:25] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "journal_article"."id", "journal_article"."title", "journal_article"."author_id", "journal_article"."pub_date", "journal_article"."category", "journal_article"."hero_image", "journal_article"."optional_image", "journal_article"."body" FROM "journal_article" WHERE "journal_article"."id" = %s' - PARAMS = (2,); args=(2,)
+[10/Jul/2015 16:47:25] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s' - PARAMS = (1,); args=(1,)
+[10/Jul/2015 16:47:34] DEBUG [django.db.backends:89] (0.001) QUERY = u'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = %s AND "django_session"."expire_date" > %s)' - PARAMS = (u'br92yqvay2lkf0hhkomotpfskd124jvc', u'2015-07-10 16:47:34.319170'); args=('br92yqvay2lkf0hhkomotpfskd124jvc', u'2015-07-10 16:47:34.319170')
+[10/Jul/2015 16:47:34] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s' - PARAMS = (1,); args=(1,)
+[10/Jul/2015 16:47:34] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "journal_article"."id", "journal_article"."title", "journal_article"."author_id", "journal_article"."pub_date", "journal_article"."category", "journal_article"."hero_image", "journal_article"."optional_image", "journal_article"."body" FROM "journal_article" WHERE "journal_article"."id" = %s' - PARAMS = (4,); args=(4,)
+[10/Jul/2015 16:47:34] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s' - PARAMS = (2,); args=(2,)
+[10/Jul/2015 16:47:38] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = %s AND "django_session"."expire_date" > %s)' - PARAMS = (u'br92yqvay2lkf0hhkomotpfskd124jvc', u'2015-07-10 16:47:38.997391'); args=('br92yqvay2lkf0hhkomotpfskd124jvc', u'2015-07-10 16:47:38.997391')
+[10/Jul/2015 16:47:38] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s' - PARAMS = (1,); args=(1,)
+[10/Jul/2015 16:47:39] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "journal_article"."id", "journal_article"."title", "journal_article"."author_id", "journal_article"."pub_date", "journal_article"."category", "journal_article"."hero_image", "journal_article"."optional_image", "journal_article"."body" FROM "journal_article" WHERE "journal_article"."id" = %s' - PARAMS = (2,); args=(2,)
+[10/Jul/2015 16:47:39] DEBUG [django.db.backends:89] (0.000) QUERY = u'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %s' - PARAMS = (1,); args=(1,)

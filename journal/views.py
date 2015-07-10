@@ -44,7 +44,7 @@ class UserDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
-@cache_page(60 * 10)
+#@cache_page(60 * 10)
 def ArticleListPage(request):
     logger.info("/articles list page got called..")
     try:
@@ -56,7 +56,7 @@ def ArticleListPage(request):
         raise Http404
     return render(request, 'journal/list.html', {'articles':articles})
 
-@cache_page(60 * 30)
+#@cache_page(60 * 30)
 def ArticleDetailPage(request, pk):
     logger.info("/articles details page got called for pk", pk)
     return render(request, 'journal/detail.html', {'article_id':pk} )
