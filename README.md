@@ -23,6 +23,10 @@ Model, Template, Views:
 - https://github.com/cjgiridhar/galex/tree/master/journal/templates/journal
 - https://github.com/cjgiridhar/galex/blob/master/journal/views.py
 
+Admin Page
+-----------
+- Used it to create users and add articles
+- https://github.com/cjgiridhar/galex/blob/master/journal/admin.py
 
 Rest APIs:
 -----------
@@ -35,6 +39,8 @@ Rest APIs:
 Exception Handling and Logging:
 --------------------------------
 - https://github.com/cjgiridhar/galex/blob/master/journal/views.py
+- Default level: Debug (Not to be done on Prod but added here for getting logs of heroku)
+- Exceptions like: Http404, ObjectDoesNotExist used
 
 
 Non Functional Requirements:
