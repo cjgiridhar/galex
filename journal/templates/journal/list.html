@@ -54,7 +54,8 @@
 					<table>
 					  <tr>
 					  	{% for article in articles %}
-						    <td><img id="image" src="{% static 'journal/images/'%}{{article.hero_image}}" width="100" height="100"/></td>
+						    <td><a href="/articles/{{article.id}}/">
+						    	<img id="image" src="{% static 'journal/images/'%}{{article.hero_image}}" width="100" height="100"/></td>
 					    {% endfor %}
 					  </tr>
 					</table>
