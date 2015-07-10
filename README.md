@@ -24,7 +24,7 @@ Model, Template, Views:
 - https://github.com/cjgiridhar/galex/blob/master/journal/views.py
 
 
-REST API:
+Rest APIs:
 -----------
 - List: http://protected-journey-8694.herokuapp.com/api/articles/
 - Detail: http://protected-journey-8694.herokuapp.com/api/articles/1/
