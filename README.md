@@ -50,3 +50,9 @@ Non Functional Requirements:
 Testing:
 ----------
 - https://github.com/cjgiridhar/galex/blob/master/journal/tests.py
+
+
+To be done
+-----------
+- Security: Authentication, Authorization for Rest APIs & CSRF token
+- Template inheritance can be done
