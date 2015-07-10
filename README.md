@@ -2,6 +2,7 @@ Galex
 ======
 
 Django app deployed on production:
+-----------------------------------
 http://protected-journey-8694.herokuapp.com/
 
 Stack:
