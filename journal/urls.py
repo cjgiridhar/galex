@@ -17,6 +17,6 @@ urlpatterns = [
     url(r'^$', views.ArticleListPage),
     url(r'^articles/(?P<pk>[0-9]+)/$', views.ArticleDetailPage),
 
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] #+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 urlpatterns = format_suffix_patterns(urlpatterns)
