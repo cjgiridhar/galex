@@ -2,7 +2,7 @@ body {
 	margin: 0;
 	padding: 0;
 	background: #fff  repeat-x left top;
-	font-family: "Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
 	font-size: 15px;
 	color: #000;
 }
@@ -54,6 +54,14 @@ body {
 }
 
 #article {
+	padding-top: 5%;
+	padding-left: 25%;
+	padding-bottom: 30px;
+	width: 900px;
+	height: 0px;
+}
+
+#next {
 	padding-top: 5%;
 	padding-left: 25%;
 	padding-bottom: 30px;

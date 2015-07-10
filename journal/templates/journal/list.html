@@ -6,11 +6,15 @@
 		<link href="{% static 'journal/css/style.css' %}" rel="stylesheet" type="text/css" media="screen" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="{% static 'journal/js/scripts.js' %}"></script>
-		{% block content %}
-			<script>
-				articleDetail( {{article_id}} );
-			</script>
-		{% endblock %}
+		<!-- it works the same with all jquery version from 1.x to 2.x -->
+		<script src="http://code.jquery.com/jquery.min.js"></script>
+		<script src="{% static 'journal/js/jssor.slider.mini.js' %}"></script>
+		<script>
+		    jQuery(document).ready(function ($) {
+		        var options = { $AutoPlay: true };
+		        var jssor_slider1 = new $JssorSlider$('slider1_container', options);
+		    });
+		</script>
 	</head>
 
 	<body>
@@ -18,6 +22,7 @@
 		<header>
 
 		</header>
+		{% load cache %}
 		<div id="mybox">
 			<!-- <img src="/home/ubuntu/fsMgr/images/box.jpeg" height="70" width="70" /> -->
 			SportJourno = The best sports journal around. Stay tuned for latest articles!!<br />
@@ -30,30 +35,45 @@
 			</FORM>
 	    </div>    
 
+	    
 		<div id="article">
 		    <div class="content">
 		        <div class="column_content">
 		            <div class="textblock">
-					<h2 id="title"></h2>
-					<p id="pub_date" style="font-size:12px; color:blue;"></p>		
-					<br> <br/>
-					<center><img id="image" src="{% static 'journal/images/.jpeg' %}" /></center>
-					<p id="body"></p>
-					<hr>
+		            	<h2>Top Articles</h2>
+	                {% for article in articles %}
+						<h3 id="title">{{article.title}}</h3>
+						<p id="pub_date" style="font-size:12px; color:blue;">{{article.pub_date}} | Author: {{article.author}}</p>
 
+						<p id="body">{{article.body}}</p>
+						<p><a href="/articles/{{article.id}}/" style="color:blue;">Read More...</a></p>
+						<hr>
+					{% endfor %}
+					<h3>What to Read Next</h3>
+					<hr>
+					<table>
+					  <tr>
+					  	{% for article in articles %}
+						    <td><img id="image" src="{% static 'journal/images/'%}{{article.hero_image}}" width="100" height="100"/></td>
+					    {% endfor %}
+					  </tr>
+					</table>
+					<br><br><br/>
+					<!-- <p>Catch up with the <a href="/news">latest sports news</a>!</p> -->
 	            	</div>
 	        	</div>
 	    	</div>
 		</div>
 
+<!-- 		<div id="next">
+			
+		</div> -->
+
+		{% cache 600 sidebar %}
 	    <div id="sidebar">
 			<table align="left">
-			<!-- <col width="50" /> <col width="100" />  -->
-<!-- 			<tr>
-				<td>Choose Category!</td>
-			</tr> -->
 			<tr>
-				<td> <a href="/"><a href="/"><img src={% static 'journal/images/home.png' %} height="50%" width="50%" /> </td>
+				<td> <a href="/"><img src={% static 'journal/images/home.png' %} height="50%" width="50%" /> </td>
 				<!-- <td> <a href="http://localhost:8888/advsearch">Advanced Search</a> </td> -->
 			</tr>
 			<tr>
@@ -75,6 +95,7 @@
 			
 			</table>
 		</div>
+		{% endcache %}
 
 	</body>
 </html>
