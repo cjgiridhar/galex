@@ -14,9 +14,8 @@ Full Stack:
 Environment:
 -------------
 - Python virtualenv
-- Heroku App Deployment Cloud
+- Heroku App Deployment Cloud (versioning: requirements.txt and Running the server: Procfile)
 - Gunicorn WebServer
-
 
 Model, Template, Views:
 ------------------------
@@ -44,7 +43,7 @@ Non Functional Requirements:
 - Scaling: Gunicorn works on multiple worker processes (eliminates GIL), Setting on Heroku dynamo is WEB_CONCURRENCY=3
 - Memory Handling: Used --max-requests 1200 on unicorn to restart a worker once 1200 requests are done
 - Async requests: Could also work with gevent (greenlets) for better handling of I/O requests
-- Throttling of Requests: UserRateThrottle for rest apis
+- Throttling of Requests: UserRateThrottle for Rest APIs
 
 
 Testing:
@@ -55,4 +54,4 @@ Testing:
 To be done
 -----------
 - Security: Authentication, Authorization for Rest APIs & CSRF token
-- Template inheritance can be done
+- Template inheritance can be done & carousel to be added in What Read Next
