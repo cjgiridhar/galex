@@ -26,8 +26,8 @@
       <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gale/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.78723407" vertical-offset="2340" max-vertical-offset="3045">
-              <caret line="194" column="0" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.7659575" vertical-offset="2340" max-vertical-offset="3045">
+              <caret line="193" column="0" selection-start-line="193" selection-start-column="0" selection-end-line="193" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -955,8 +955,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gale/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.78723407" vertical-offset="2340" max-vertical-offset="3045">
-          <caret line="194" column="0" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.7659575" vertical-offset="2340" max-vertical-offset="3045">
+          <caret line="193" column="0" selection-start-line="193" selection-start-column="0" selection-end-line="193" selection-end-column="0" />
           <folding />
         </state>
       </provider>
